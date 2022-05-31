@@ -1,0 +1,2 @@
+module FrassesHelper
+end
