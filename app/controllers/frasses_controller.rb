@@ -39,6 +39,6 @@ class FrassesController < ApplicationController
   private
 
   def frasse_params
-    params.require(:frasse).permit(:title, :content)
+    params.require(:frasse).permit(:content)
   end
 end
