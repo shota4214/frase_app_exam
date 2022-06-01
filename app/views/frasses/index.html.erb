@@ -1,2 +1,17 @@
-<h1>Frasses#index</h1>
-<p>Find me in app/views/frasses/index.html.erb</p>
+<h1>Frase一覧</h1><p>※fraseはイタリア語で文章という意味です</p>
+
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <th>内容</th>
+  </tr>
+
+  <% @frasses.each do |frasse| %>
+  <tr>
+    <td><%= frasse.title %></td>
+    <td><%= frasse.content %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to '新しくFraseを投稿する', '/frasses/new' %>
