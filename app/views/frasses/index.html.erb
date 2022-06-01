@@ -11,8 +11,8 @@
     <td><%= frasse.content %></td>
 
     <td><%= link_to '詳細',frass_path(frasse.id) %></td>
-    <td><%= link_to "編集", edit_frass_path(frasse.id) %></td>
-    <td><%= link_to '削除', frass_path(frasse.id), method: :delete %></td>
+    <td><%= link_to "編集", edit_frass_path(frasse.id), data: { confirm: '本当に編集していいですか？' } %></td>
+    <td><%= link_to '削除', frass_path(frasse.id), method: :delete ,data: {confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>
