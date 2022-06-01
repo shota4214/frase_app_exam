@@ -9,8 +9,13 @@ class FrassesController < ApplicationController
   end
 
   def create
-    Frasse.create(params.require(:frasse).permit(:title,:content))
-    redirect_to new_frasse_paht
+    # Frasse.create(params.require(:frasse).permit(:title,:content))
+    @frasse = Frasse.new(frasse_params)
+    if @frasse.save
+      redirect_to new_frasses_paht, notice: "Fraseを作成しました！"
+    else
+      render:new
+    end
   end
 
   def show
