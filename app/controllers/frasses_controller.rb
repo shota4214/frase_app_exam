@@ -35,6 +35,12 @@ class FrassesController < ApplicationController
     end
   end
 
+  def destroy
+    @frasse = Frasse.find(params[:id])
+    @frasse.destroy
+    redirect_to frasses_path, notice: "Fraseを削除しました"
+  end
+
 
   private
 
