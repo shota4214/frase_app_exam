@@ -11,6 +11,8 @@
   <tr>
     <td><%= frasse.title %></td>
     <td><%= frasse.content %></td>
+
+    <td><%= link_to '詳細を確認する',frass_path(frasse.id) %></td>
   </tr>
 <% end %>
 </table>

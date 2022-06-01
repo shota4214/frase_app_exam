@@ -13,6 +13,10 @@ class FrassesController < ApplicationController
     redirect_to new_frasse_paht
   end
 
+  def show
+    @frasse = Frasse.find(params[:id])
+  end
+
 
   private
 
