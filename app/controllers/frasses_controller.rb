@@ -22,6 +22,19 @@ class FrassesController < ApplicationController
     @frasse = Frasse.find(params[:id])
   end
 
+  def edit
+    @frasse = Frasse.find(params[:id])
+  end
+
+  def update
+    @frasse = Frasse.find(params[:id])
+    if @frasse.update(frasse_params)
+      redirect_to frasses_path, notice: "Fraseを編集しました"
+    else
+      render :edit
+    end
+  end
+
 
   private
 

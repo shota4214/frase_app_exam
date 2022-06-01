@@ -13,6 +13,7 @@
     <td><%= frasse.content %></td>
 
     <td><%= link_to '詳細を確認する',frass_path(frasse.id) %></td>
+    <td><%= link_to "ブログを編集する", edit_frass_path(frasse.id) %></td>
   </tr>
 <% end %>
 </table>
