@@ -1,0 +1,21 @@
+<%= form_with(model: @frasse, local: true) do |form| %>
+  <% if @frasse.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @frasse.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @frasse.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="frasse_content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to "Frase一覧画面にもどる", frasses_path %>
