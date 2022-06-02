@@ -49,7 +49,6 @@ class FrassesController < ApplicationController
     render :new if @frasse.invalid?
   end
 
-
   private
 
   def frasse_params
