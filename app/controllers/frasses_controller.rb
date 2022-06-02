@@ -9,12 +9,15 @@ class FrassesController < ApplicationController
   end
 
   def create
-    # Frasse.create(params.require(:frasse).permit(:title,:content))
     @frasse = Frasse.new(frasse_params)
-    if @frasse.save
-      redirect_to new_frasses_paht, notice: "Fraseを作成しました！"
+    if params[:back]
+      render :new
     else
-      render:new
+      if @frasse.save
+        redirect_to frasses_path, notice: "Fraseを作成しました！"
+      else
+        render:new
+      end
     end
   end
 
@@ -39,6 +42,11 @@ class FrassesController < ApplicationController
     @frasse = Frasse.find(params[:id])
     @frasse.destroy
     redirect_to frasses_path, notice: "Fraseを削除しました"
+  end
+
+  def confirm
+    @frasse = Frasse.new(frasse_params)
+    render :new if @frasse.invalid?
   end
 
 

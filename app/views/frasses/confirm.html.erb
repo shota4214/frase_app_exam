@@ -1,0 +1,10 @@
+<h2>以下の内容で投稿します</h2>
+
+<%= form_with(model: @frasse, local: true ) do |form| %>
+  <%= form.hidden_field :content %>
+
+  <p>本文:<%= @frasse.content %></p>
+  <%= form.submit  "new Frase!!" %>
+
+  <%= form.submit "戻る", name: 'back' %>
+<% end %>
